@@ -2,6 +2,7 @@ import './globals.css'
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import Link from 'next/link'
+import Providers from './provider'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -16,28 +17,30 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html className={inter.className}lang="en">
-      <body className='container' >
-        <navi className='sidebar'>
-          <ul>
-            <li key='0'>
-              <Link href="/">Home</Link>
-            </li>
-            <li key='1'>
-              <Link href="/getstarted">Get Started</Link>
-            </li>
-            <li key='2'>
-              <Link href="/weather">Weather</Link>
-            </li>
-            <li key='3'>
-              <Link href="/setting">Setting</Link>
-            </li>
-          </ul>
-        </navi>
-        <div className='main-content'>
-          {children}
-        </div>
-      </body>
-    </html>
+      <html className={inter.className}lang="en">
+        <body className='container' >
+          <Providers>
+            <navi className='sidebar'>
+              <ul>
+                <li key='0'>
+                  <Link href="/">Home</Link>
+                </li>
+                <li key='1'>
+                  <Link href="/getstarted">Get Started</Link>
+                </li>
+                <li key='2'>
+                  <Link href="/weather">Weather</Link>
+                </li>
+                <li key='3'>
+                  <Link href="/setting">Setting</Link>
+                </li>
+              </ul>
+            </navi>
+            <div className='main-content'>
+              {children}
+            </div>
+          </Providers>
+        </body>
+      </html>
   )
 }
