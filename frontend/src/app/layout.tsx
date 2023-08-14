@@ -27,6 +27,9 @@ export default function RootLayout({
               <Link href="/getstarted">Get Started</Link>
             </li>
             <li key='2'>
+              <Link href="/weather">Weather</Link>
+            </li>
+            <li key='3'>
               <Link href="/setting">Setting</Link>
             </li>
           </ul>
