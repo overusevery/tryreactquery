@@ -1,4 +1,3 @@
-
 import {render, screen} from '@testing-library/react'
 import GetStarted from '../src/app/getstarted/page';
 
