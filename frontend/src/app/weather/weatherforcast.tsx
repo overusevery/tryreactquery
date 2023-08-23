@@ -2,9 +2,9 @@
 import { useQuery } from 'react-query'
 import Skeleton from '@mui/material/Skeleton';
 
-async function getForcast(){
-    const res = await fetch('https://www.jma.go.jp/bosai/forecast/data/overview_forecast/130000.json');
-  return await res.json();
+function getForcast(){
+    return fetch('https://www.jma.go.jp/bosai/forecast/data/overview_forecast/130000.json')
+      .then(res => res.json())
 }
 
 export default function Forcast() {
