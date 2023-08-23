@@ -1,6 +1,6 @@
 // @ts-ignore
 function moveToEachPageWhenNaviClicked({naviDiaplayName, eachPageHeaderDisplayValue, movedURL}){
-    cy.visit('localhost:3000')
+    cy.visit(Cypress.env('HOST'))
     cy.get('.sidebar').contains(naviDiaplayName).click()
     cy.get('.main-content').contains(eachPageHeaderDisplayValue)
     cy.url().should('include', movedURL)
