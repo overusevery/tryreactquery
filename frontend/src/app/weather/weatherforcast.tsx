@@ -2,9 +2,9 @@
 import { useQuery } from 'react-query'
 import Skeleton from '@mui/material/Skeleton';
 
-function getForcast(){
-    return fetch('https://www.jma.go.jp/bosai/forecast/data/overview_forecast/130000.json')
-      .then(res => res.json())
+async function getForcast(){
+    const res = await fetch('https://www.jma.go.jp/bosai/forecast/data/overview_forecast/130000.json');
+  return await res.json();
 }
 
 export default function Forcast() {
@@ -12,7 +12,7 @@ export default function Forcast() {
     return (
       <div>
         <h2>Forcast(Tokyo)</h2>
-        <div>{isLoading ? <Skeleton sx={{ bgcolor: 'grey.900' }} animation="wave" />: data.text}</div>
+        <div>{isLoading ? <Skeleton sx={{ bgcolor: 'grey.900' }} animation="wave" />: data?.text}</div>
       </div>
     )
   }

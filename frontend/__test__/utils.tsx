@@ -2,7 +2,8 @@
 import { render } from "@testing-library/react";
 import * as React from "react";
 import { QueryClient, QueryClientProvider } from "react-query";
-import { ThemeProvider, createTheme } from "@mui/material/styles";
+import { makeServer } from "../src/mocks/server"
+makeServer()
 
 const createTestQueryClient = () =>
   new QueryClient({
